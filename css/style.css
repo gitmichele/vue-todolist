@@ -59,3 +59,8 @@ ul{
 .list .fa-times{
     cursor: pointer;
 }
+.list h2{
+    text-transform: uppercase;
+    text-align: center; 
+    border-bottom: 2px solid lightsteelblue;
+}

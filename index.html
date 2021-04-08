@@ -26,16 +26,17 @@
         </div>
         
         <div class="input container">
-            <input type="text" placeholder="New task">
-            <button>Add</button>
+            <input v-on:keyup.enter="getTask" type="text" placeholder="New task" v-model='newTask'>
+            <button @click='getTask'>Add</button>
         </div>
 
         <div class="list container">
-            <ul>
-                <li> 
-                    <i class="fas fa-times"></i>
+            <ul v-if='tasks.length > 0'>
+                <li v-for='(task, index) in tasks'> {{ task }}
+                    <i @click='deleteTask(index)' class="fas fa-times"></i>
                 </li>
             </ul>
+            <h2 v-else>No current tasks</h2>
         </div>
     </section>
 
